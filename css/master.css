@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@layer base {
+    body {
+        background-color: #FCF7EE;
+        overflow-x: hidden;
+        font-family: hiva1;
+        font-family: hiva;
+    }
+}
+
+@font-face {
+    font-family: "hiva";
+    src: url("../font/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
+    font-family: "hiva1";
+    src: url("../font/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
+
+@layer components {
+    .btn {
+        @apply w-[200px] h-[70px] flex items-center justify-center text-white cursor-pointer duration-700 bg-[#AA886E] border-b-4 border-b-[#f4e1c1] border-r-4 border-r-[#f4e1c1] relative transition-all overflow-hidden
+    }
+
+    .btn-icon {
+        @apply text-white absolute left-4 text-[20px] flex items-center duration-700 transition-all 
+    }
+
+    .btn-text {
+        @apply px-4 py-2 text-white flex translate-x-5 duration-500 text-[20px]
+    }
+
+    .btn:hover {
+        @apply bg-[#E75438] border-b-red-800 border-r-red-800 
+    }
+
+    @keyframes move-icon {
+        0% {
+            left:4px;
+            right: auto;
+            opacity: 1;
+        }
+    
+        50% {
+            opacity: 0;
+            left: 0;
+            right: auto;
+        }
+
+        51% {
+            left: auto;
+            right: 0;
+            opacity: 0;
+        }
+
+        100% {
+            left: auto;
+            opacity: 1;
+            right:6px;
+        }
+    }
+
+    .btn:hover .btn-icon {
+        animation: move-icon 1s ease forwards;
+        padding-right: 5px;
+    }
+    .btn:hover .btn-text{
+        @apply -translate-x-4
+    }
+}
+
+
+@keyframes animate1 {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-animate1 {
+  animation: animate1 3s linear forwards;
+  animation-timeline: view();
+  animation-range: entry -10% cover 40%;            
+}
+
+
+@keyframes animate2 {
+    from{
+        opacity: 0;
+         transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-animate2 {
+    animation: animate2 3s linear forwards;
+    animation-timeline: view();
+    animation-range: entry -10% cover 30%;  
+}
+
+
+@keyframes animate3 {
+    from{
+        opacity: 0;
+         transform: translatey(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+.animate-animate3 {
+    animation: animate3 3s linear forwards;
+    animation-timeline: view();
+    animation-range: entry -50% cover 30%;  
+}
+
+@keyframes animate4 {
+    from{
+        opacity: 0;
+         transform: translatex(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+.animate-animate4 {
+    animation: animate4 3s linear forwards;
+    animation-timeline: view();
+    animation-range: entry -50% cover 30%;  
+}
+
